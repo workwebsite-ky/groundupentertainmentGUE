@@ -461,6 +461,34 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; col
 .tier .btn { margin-top: auto; justify-content: center; }
 
 /* ============================================================
+   FOUNDER / CEO
+   ============================================================ */
+.founder-credit {
+  margin-top: 1.6rem; display: flex; align-items: center; gap: 0.7rem;
+  font-family: var(--f-mono); font-size: 0.9rem; color: var(--ink);
+  border-left: 3px solid; border-image: var(--grad-fire) 1; padding-left: 0.9rem;
+}
+.founder-credit b { color: var(--green); }
+.founder-credit em { color: var(--ink-mute); font-style: normal; }
+
+.ceo { display: grid; grid-template-columns: 300px 1fr; gap: clamp(2rem, 5vw, 3.5rem); align-items: center; }
+@media (max-width: 760px){ .ceo { grid-template-columns: 1fr; } }
+.ceo__avatar {
+  aspect-ratio: 1; border-radius: var(--radius); overflow: hidden; position: relative;
+  border: 1px solid var(--line); background: linear-gradient(180deg, var(--panel), var(--black));
+  display: grid; place-items: center;
+}
+.ceo__avatar::before { content: ""; position: absolute; inset: auto -30% -40% -30%; height: 60%; background: var(--grad-fire); filter: blur(60px); opacity: 0.28; }
+.ceo__avatar .mono { font-family: var(--f-display); font-size: 6rem; line-height: 1; background: var(--grad-spray); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.ceo__avatar .role { position: absolute; bottom: 0; left: 0; right: 0; padding: 0.6rem; text-align: center; font-family: var(--f-mono); font-size: 0.64rem; letter-spacing: 0.18em; background: rgba(10,10,10,0.65); color: var(--ink-soft); }
+.ceo__alias { font-family: var(--f-mono); font-size: 0.8rem; color: var(--green); letter-spacing: 0.1em; margin-top: 0.4rem; }
+.ceo__sig { font-family: var(--f-display); font-size: 1.7rem; color: var(--orange); margin-top: 1.2rem; }
+
+/* "By agreement" pill replacing prices */
+.tier__terms { font-family: var(--f-display); font-size: 1.7rem; margin: 1.2rem 0 0.2rem; line-height: 1; }
+.tier__terms .sm { font-family: var(--f-mono); font-size: 0.74rem; color: var(--ink-mute); letter-spacing: 0.08em; display: block; margin-top: 0.4rem; text-transform: uppercase; }
+
+/* ============================================================
    FAQ accordion
    ============================================================ */
 .faq { max-width: 820px; margin-inline: auto; }
@@ -524,6 +552,8 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; col
 .footer__links a { color: var(--ink-soft); font-size: 0.92rem; transition: color 0.3s; }
 .footer__links a:hover { color: var(--green); }
 .footer__about p { color: var(--ink-soft); font-size: 0.92rem; margin-top: 0.8rem; max-width: 34ch; }
+.footer__founder { font-family: var(--f-mono); font-size: 0.82rem; }
+.footer__founder b { color: var(--green); } .footer__founder em { color: var(--orange); font-style: normal; }
 .socials { display: flex; gap: 0.7rem; margin-top: 1.2rem; }
 .socials a { width: 40px; height: 40px; border-radius: 11px; border: 1px solid var(--line); display: grid; place-items: center; transition: transform 0.3s, border-color 0.3s, background 0.3s; }
 .socials a:hover { transform: translateY(-3px); border-color: var(--green); background: rgba(92,224,73,0.1); }
@@ -589,7 +619,7 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; col
       <nav class="nav__links" aria-label="Primary">
         <a class="nav__link" href="index.html" aria-current="page">Home</a>
         <a class="nav__link" href="services.html">Services</a>
-        <a class="nav__link" href="packages.html">Packages</a>
+        <a class="nav__link" href="development.html">Development</a>
         <a class="nav__link" href="about.html">About</a>
         <a class="nav__link" href="contact.html">Contact</a>
         <a class="btn btn--primary nav__cta" href="contact.html">Book a Session</a>
@@ -621,7 +651,7 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; col
         </p>
         <div class="hero__cta">
           <a class="btn btn--primary" href="contact.html">Book a Session →</a>
-          <a class="btn btn--ghost" href="packages.html">View Packages</a>
+          <a class="btn btn--ghost" href="development.html">Artist Development</a>
         </div>
 
         <div class="hero__stats">
@@ -661,6 +691,9 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; col
           <p class="lead" style="margin-top:1rem">
             No gatekeeping. No empty promises. Just the rooms, the engineers, and the strategy to
             turn talent into a catalog people remember.
+          </p>
+          <p class="founder-credit">
+            🎙️ <span>Founded &amp; led by <b>Terrell Simmons</b> &mdash; <em>Rello · Tysimms</em>, Founder &amp; CEO</span>
           </p>
           <div class="hero__cta" style="margin-top:1.8rem">
             <a class="btn btn--green" href="about.html">Our Story</a>
@@ -807,6 +840,7 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; col
             </span>
           </a>
           <p>A Chicago record label and studio building the next generation of artists — from the ground up.</p>
+          <p class="footer__founder">Founded &amp; led by <b>Terrell Simmons</b> — <em>Rello · Tysimms</em>.</p>
           <div class="socials">
             <a href="#" aria-label="Instagram">◎</a>
             <a href="#" aria-label="YouTube">►</a>
@@ -819,7 +853,7 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; col
           <ul class="footer__links">
             <li><a href="index.html">Home</a></li>
             <li><a href="services.html">Services</a></li>
-            <li><a href="packages.html">Packages</a></li>
+            <li><a href="development.html">Development</a></li>
             <li><a href="about.html">About</a></li>
           </ul>
         </div>
